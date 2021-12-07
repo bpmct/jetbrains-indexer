@@ -1,6 +1,7 @@
 # indexer
 
-Generate and package JetBrains [shared indexes](https://www.jetbrains.com/help/idea/shared-indexes.html) for a project.
+Generate and package JetBrains [shared indexes](https://www.jetbrains.com/help/idea/shared-indexes.html) for a project. Shared indexes are often hosted in a remote 
+CDN and used by IDEs to speed up indexing time. This Docker container simplifies building shared indexes. 
 
 1.  Generate indexes for your project
 
