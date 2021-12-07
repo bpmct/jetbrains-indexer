@@ -29,3 +29,7 @@ Generate and package JetBrains [shared indexes](https://www.jetbrains.com/help/i
       project:
         - url: http://localhost:3000
     ```
+
+---
+
+If you just want to generate raw shared indexes with Docker, use [damintsew/idea-shared-index-dockerfile](damintsew/idea-shared-index-dockerfile). This project is based on that.
