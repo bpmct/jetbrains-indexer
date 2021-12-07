@@ -5,7 +5,7 @@ ARG INTELLIJ_IDE_TAR=ideaIU-${INTELLIJ_VERSION}.tar.gz
 
 ARG CDN_LAYOUT_TOOL_VERSION=0.8.65
 
-ARG INDEXES_CDN_URL=http://localhost:3000/project
+ENV INDEXES_CDN_URL=http://localhost:3000/project
 
 ENV COMMIT_ID=''
 ENV PROJECT_ID=''
@@ -51,7 +51,7 @@ CMD /opt/idea/bin/idea.sh dump-shared-index project \
     --tmp=${SHARED_INDEX_BASE}/temp \
     --output=${SHARED_INDEX_BASE}/output && \
     /opt/cdn-layout-tool/bin/cdn-layout-tool \
-    --indexes-dir=/shared-indexes \
+    --indexes-dir=${SHARED_INDEX_BASE} \
     --url=${SHARED_INDEX_BASE} && \
     mv ${SHARED_INDEX_BASE}/output ${SHARED_INDEX_BASE}/project/output
 
