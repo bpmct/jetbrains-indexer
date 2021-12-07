@@ -11,7 +11,7 @@ CDN and used by IDEs to speed up indexing time. This Docker container simplifies
     docker run -it \
         -v "$(pwd)":/var/project \
         -v "$(pwd)"/indexes-out:/shared-index \
-        -e INDEXES_CDN_URL=http://localhost:3000/project
+        -e INDEXES_CDN_URL=http://localhost:3000/project \
         bencdr/indexer
     ```
 
