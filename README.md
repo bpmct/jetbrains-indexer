@@ -7,7 +7,7 @@ CDN and used by IDEs to speed up indexing time. This Docker container simplifies
 
 Blog post: <https://coder.com/blog/faster-jetbrains-ides-with-shared-indexes>
 
-## Docs and Examples
+## Docs and examples
 
 - [Test a project with shared indexes locally](./docs/filesystem.md)
 - [Generate shared indexes for Coder workspaces](./docs/coder.md)
