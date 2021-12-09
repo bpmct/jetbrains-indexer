@@ -33,7 +33,7 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
     python3 -m http.server 3000
     ```
 
-    > this URL must be the same as `INDEXES_CDN_URL` in step 1.
+    > this URL must be the same as INDEXES_CDN_URL in step 1.
 
 1.  Add `intellij.yaml` to your project if you don't have one
 
