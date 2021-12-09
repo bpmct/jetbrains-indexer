@@ -32,17 +32,19 @@ Blog post: <https://coder.com/blog/faster-jetbrains-ides-with-shared-indexes>
 
     ```sh
     # test with local Python server
-    cd indexes-out/
+    cd $HOME/indexes-out/
     python3 -m http.server 3000
     ```
 
-1.  Add `intellij.yaml` to your project if you don't have one.
+1.  Add `intellij.yaml` to your project if you don't have one
 
     ```yaml
     sharedIndex:
       project:
         - url: http://localhost:3000/project
     ```
+
+1. Open your IDE and test (use `File → Invalidate Caches` to load for the first time
 
 ## IDE support
 
