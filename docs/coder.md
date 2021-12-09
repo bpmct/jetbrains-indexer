@@ -1,3 +1,3 @@
-# Use shared indexes with a Coder
+# Shared indexes with Coder
 
-coming soon
+Coming very soon. See [#4](https://github.com/bpmct/jetbrains-indexer/issues/4) if you have questions or a use case.
