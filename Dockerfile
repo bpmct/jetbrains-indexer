@@ -3,7 +3,7 @@ FROM openkbs/jdk-mvn-py3
 # Shared indexing works best
 # when you use the proper IDE
 # for the language you are using
-ENV IDE=IdeaIU
+ENV IDE=ideaIU
 ENV IDE_SHORT=idea
 ENV IDE_CODE=idea
 ENV IDE_VERSION=2021.3
