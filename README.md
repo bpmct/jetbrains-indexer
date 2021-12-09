@@ -27,13 +27,13 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
 
 1.  Upload indexes to CDN (or test locally)
 
-    > Note: this URL must be the same as `INDEXES_CDN_URL` in step 1.
-
     ```sh
     # test with local Python server
     cd $HOME/indexes-out/
     python3 -m http.server 3000
     ```
+
+    > this URL must be the same as `INDEXES_CDN_URL` in step 1.
 
 1.  Add `intellij.yaml` to your project if you don't have one
 
