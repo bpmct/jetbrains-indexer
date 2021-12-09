@@ -27,6 +27,8 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
 
 1.  Upload indexes to CDN (or test locally)
 
+    > Note: this URL must be the same as `INDEXES_CDN_URL` in step 1.
+
     ```sh
     # test with local Python server
     cd $HOME/indexes-out/
@@ -41,7 +43,7 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
         - url: http://localhost:3000/project
     ```
 
-1. Open your IDE and test (use `File → Invalidate Caches` to load for the first time
+1.  Open your IDE and test (use `File → Invalidate Caches` to load for the first time
 
 ## IDE support
 
