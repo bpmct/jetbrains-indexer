@@ -5,6 +5,8 @@ Generate and package JetBrains [shared indexes](https://www.jetbrains.com/help/i
 Shared indexes are often hosted in a remote
 CDN and used by IDEs to speed up indexing time. This Docker container simplifies building shared indexes.
 
+Blog post: <https://coder.com/blog/faster-jetbrains-ides-with-shared-indexes>
+
 ## Docs and Examples
 
 - [Test a project with shared indexes locally](./docs/filesystem.md)
