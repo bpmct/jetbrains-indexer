@@ -52,4 +52,4 @@ clone & build the container image with the [following environment variables](htt
 
 ---
 
-If you just want to generate raw shared indexes with Docker, use [https://github.com/damintsew/idea-shared-index-dockerfile](damintsew/idea-shared-index-dockerfile). This project is based on that.
+If you just want to generate raw shared indexes with Docker, you can use [damintsew/idea-shared-index-dockerfile](https://github.com/damintsew/idea-shared-index-dockerfile). This project is based on that.
