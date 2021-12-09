@@ -8,9 +8,9 @@ CDN and used by IDEs to speed up indexing time. This Docker container simplifies
     ```sh
     cd your-project/
 
-    docker run -it \
+    docker run -it --rm \
         -v "$(pwd)":/var/project \
-        -v "$(pwd)"/indexes-out:/shared-index \
+        -v "$HOME/indexes-out":/shared-index \
         -e INDEXES_CDN_URL=http://localhost:3000/project \
         bencdr/indexer
     ```

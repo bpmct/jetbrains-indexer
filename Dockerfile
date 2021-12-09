@@ -3,10 +3,12 @@ FROM openkbs/jdk-mvn-py3
 # Shared indexing works best
 # when you use the proper IDE
 # for the language you are using
-ENV IDE=ideaIU
+ENV IDE=IdeaIU
 ENV IDE_SHORT=idea
+ENV IDE_CODE=idea
 ENV IDE_VERSION=2021.3
 
+ARG IDE_TAR=${IDE}-${IDE_VERSION}.tar.gz
 ARG CDN_LAYOUT_TOOL_VERSION=0.8.65
 
 # Runtime variables
@@ -29,7 +31,7 @@ RUN mkdir -p /etc/idea && \
     mkdir ${SHARED_INDEX_BASE}/temp
 
 # Install IntelliJ IDEA Ultimate
-RUN wget -nv https://download-cf.jetbrains.com/${IDE_SHORT}/${IDE}-${IDE_VERSION}.tar.gz && \
+RUN wget -nv https://download-cf.jetbrains.com/${IDE_CODE}/${IDE_TAR} && \
     tar xzf ${IDE_TAR} && \
     tar tzf ${IDE_TAR} | head -1 | sed -e 's/\/.*//' | xargs -I{} ln -s {} idea && \
     rm ${IDE_TAR} && \
@@ -46,17 +48,9 @@ RUN wget https://packages.jetbrains.team/maven/p/ij/intellij-shared-indexes-publ
     rm cdn-layout-tool.zip && \
     mv cdn-layout-tool-${CDN_LAYOUT_TOOL_VERSION} cdn-layout-tool
 
-# Generate the shared index
-CMD /opt/idea/bin/${IDE_SHORT}.sh dump-shared-index project \
-    --project-dir=${IDEA_PROJECT_DIR} \
-    --project-id=${PROJECT_ID} \
-    --commit-id=${COMMIT_ID} \
-    --tmp=${SHARED_INDEX_BASE}/temp \
-    --output=${SHARED_INDEX_BASE}/output && \
-    /opt/cdn-layout-tool/bin/cdn-layout-tool \
-    --indexes-dir=${SHARED_INDEX_BASE} \
-    --url=${INDEXES_CDN_URL} && \
-    mv ${SHARED_INDEX_BASE}/output ${SHARED_INDEX_BASE}/project/output
+
+COPY entrypoint.sh entrypoint.sh
+CMD ./entrypoint.sh
 
 # Comment out the CMD line and uncomment the following for testing
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
