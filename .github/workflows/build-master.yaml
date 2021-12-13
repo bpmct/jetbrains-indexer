@@ -14,5 +14,5 @@ jobs:
       IDE_SHORT: idea
       IDE_CODE: idea
     secrets:
-      username: bpmct
-      token: ${{ secrets.GHCR_PAT }}
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
