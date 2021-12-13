@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.token }}
 
-      - name: Build image and push to Docker Hub and GitHub Container Registry
+      - name: Build & Push
         uses: docker/build-push-action@v2
         with:
           context: ./image
