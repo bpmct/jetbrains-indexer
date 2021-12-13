@@ -13,5 +13,3 @@ jobs:
       IDE: ideaIU
       IDE_SHORT: ideaIU
       IDE_CODE: idea
-    secrets:
-      token: ${{ secrets.GHCR_PAT }}
