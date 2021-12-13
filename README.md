@@ -22,7 +22,7 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
         -v "$(pwd)":/var/project \
         -v "$HOME/indexes-out":/shared-index \
         -e INDEXES_CDN_URL=http://localhost:3000/project \
-        bencdr/indexer
+        bencdr/indexer:intellij-2021.3
     ```
 
 1.  Upload indexes to CDN (or test locally)
@@ -47,8 +47,9 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
 
 ## IDE support
 
-By default, this project indexes with [IntelliJ IDEA Ultimate 2021.3](https://www.jetbrains.com/idea/). For best results with other JetBrains IDEs,
-clone & build the container image with the [following environment variables](https://github.com/bpmct/indexer/blob/master/Dockerfile#L6-L9).
+By default, this project indexes version 2021.3 of your IDE. Specify the IDE name by using the appropriate tag (e.g `bencdr/indexer:[ide-name]-2021.3`). You can verify with [DockerHub](https://hub.docker.com/r/bencdr/indexer/tags).
+
+If an IDE/version is not on DockerHub, we recommend you manually pulling and building the image yourself using [these build arguments](https://github.com/bpmct/jetbrains-indexer/blob/master/image/Dockerfile#L3-L9).
 
 ---
 
