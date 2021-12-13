@@ -3,7 +3,7 @@ name: Call a reusable workflow
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build-intellij:
