@@ -1,0 +1,39 @@
+name: Build and Push Images
+
+jobs:
+  # define job to build and publish docker image
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: ./src/samples/simple
+          # Note: tags has to be all lower-case
+          tags: |
+            ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+  build-intellij-idea:
+    name: Build (InteliJ IDEA)
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Build (IntelliJ IDEA)
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: ./image
+          # Note: tags has to be all lower-case
+          tags: |
+            ghcr.io/bpmct/jetbrains-indexer/intellij:latest
+          # build on feature branches, push only on main branch
+          push: ${{ github.ref == 'refs/heads/main' }}
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
