@@ -1,14 +1,23 @@
-name: Build and Push Images
+name: build & push
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      IDE:
+        required: true
+        type: string
+      IDE_SHORT:
+        required: true
+        type: string
+      IDE_CODE:
+        required: true
+        type: string
+      IDE_VERSION:
+        required: false
+        type: string
+        default: "2021.3"
 
 jobs:
-  # define job to build and publish docker image
-  setup:
-    name: Setup
+  default:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,11 +32,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GHCR_PAT }}
 
-  build-intellij-idea:
-    name: Build (InteliJ IDEA)
-    runs-on: ubuntu-latest
-    needs: setup
-    steps:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
         with:
@@ -35,8 +39,8 @@ jobs:
           context: ./image
           # Note: tags has to be all lower-case
           tags: |
-            ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
+            ghcr.io/bpmct/jetbrains-indexes/indexer-jetbrains:latest
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: true
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
