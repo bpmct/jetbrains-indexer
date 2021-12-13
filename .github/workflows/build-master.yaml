@@ -13,6 +13,5 @@ jobs:
       IDE: ideaIU
       IDE_SHORT: ideaIU
       IDE_CODE: idea
-    secrets:
       username: bpmct
       token: ${{ secrets.GHCR_PAT }}
