@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-intellij:
-    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yml@main
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@main
     with:
       IDE: ideaIU
       IDE_SHORT: ideaIU
