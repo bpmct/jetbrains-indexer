@@ -1,0 +1,16 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-intellij:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yml@main
+    with:
+      IDE: ideaIU
+      IDE_SHORT: ideaIU
+      IDE_CODE: idea
+    secrets:
+      token: ${{ secrets.GHCR_PAT }}
