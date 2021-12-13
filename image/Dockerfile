@@ -9,6 +9,7 @@ ARG IDE_CODE=idea
 ARG IDE_VERSION=2021.3
 
 # persist build args for runtime
+# see https://www.saltycrane.com/blog/2021/04/buildtime-vs-runtime-environment-variables-nextjs-docker/#setting-dynamic-buildtime-environment-variables-that-are-available-at-runtime-also
 ENV IDE=$IDE
 ENV IDE_SHORT=$IDE_SHORT
 ENV IDE_CODE=$IDE_CODE
