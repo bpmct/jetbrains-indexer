@@ -3,10 +3,16 @@ FROM openkbs/jdk-mvn-py3
 # Shared indexing works best
 # when you use the proper IDE
 # for the language you are using
-ENV IDE=ideaIU
-ENV IDE_SHORT=idea
-ENV IDE_CODE=idea
-ENV IDE_VERSION=2021.3
+ARG IDE=ideaIU
+ARG IDE_SHORT=idea
+ARG IDE_CODE=idea
+ARG IDE_VERSION=2021.3
+
+# persist build args for runtime
+ENV IDE=$IDE
+ENV IDE_SHORT=$IDE_SHORT
+ENV IDE_CODE=$IDE_CODE
+ENV IDE_VERSION=$IDE_VERSION
 
 ARG IDE_TAR=${IDE}-${IDE_VERSION}.tar.gz
 ARG CDN_LAYOUT_TOOL_VERSION=0.8.65
