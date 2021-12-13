@@ -39,11 +39,14 @@ jobs:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
         with:
-          # relative path to the place where source code with Dockerfile is located
           context: ./image
-          # Note: tags has to be all lower-case
+          build-args: |
+            IDE=${{ inputs.IDE }}
+            IDE_SHORT=${{ inputs.IDE_SHORT }}
+            IDE_CODE=${{ inputs.IDE_CODE }}
+            IDE_VERSION=${{ inputs.IDE_VERSION }}
           tags: |
-            ghcr.io/bpmct/jetbrains-indexes/indexer-jetbrains:latest
+            ghcr.io/bpmct/jetbrains-indexes/indexer:${{ inputs.IDE_SHORT }}-${{ inputs.IDE_VERSION }}
           # build on feature branches, push only on main branch
           push: true
       - name: Image digest

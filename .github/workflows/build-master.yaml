@@ -11,7 +11,7 @@ jobs:
     uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
     with:
       IDE: ideaIU
-      IDE_SHORT: ideaIU
+      IDE_SHORT: idea
       IDE_CODE: idea
     secrets:
       username: bpmct
