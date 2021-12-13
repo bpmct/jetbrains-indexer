@@ -18,7 +18,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           # relative path to the place where source code with Dockerfile is located
-          context: ./src/samples/simple
+          context: ./image
           # Note: tags has to be all lower-case
           tags: |
             ghcr.io/oskardudycz/eventsourcing.nodejs/simple:latest
