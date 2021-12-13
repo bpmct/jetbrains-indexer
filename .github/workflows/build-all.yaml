@@ -1,0 +1,72 @@
+name: Call a reusable workflow
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-intellij:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: ideaIU
+      IDE_SHORT: idea
+      IDE_CODE: idea
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-webstorm:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: WebStorm
+      IDE_SHORT: webstorm
+      IDE_CODE: webstorm
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-goland:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: goland
+      IDE_SHORT: goland
+      IDE_CODE: go
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-pycharm:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: pycharm-professional
+      IDE_SHORT: pycharm
+      IDE_CODE: python
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-phpstorm:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: PhpStorm
+      IDE_SHORT: pycharm
+      IDE_CODE: webide
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-clion:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: CLion
+      IDE_SHORT: clion
+      IDE_CODE: cpp
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
+  build-rubymine:
+    uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
+    with:
+      IDE: RubyMine
+      IDE_SHORT: rubymine
+      IDE_CODE: ruby
+    secrets:
+      username: ${{ secrets.DOCKERHUB_USERNAME }}
+      token: ${{ secrets.DOCKERHUB_TOKEN }}
