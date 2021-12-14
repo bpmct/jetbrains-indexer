@@ -1,4 +1,4 @@
-name: Build images for all IDEs
+name: run workflows for all IDEs
 
 on:
   push:
