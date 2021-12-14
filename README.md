@@ -43,7 +43,7 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
         - url: http://localhost:3000/project
     ```
 
-1.  Open your IDE and test (use `File → Invalidate Caches` to load for the first time)
+1.  Open your IDE and test (use `File → Invalidate Caches` to load indexes for the first time again)
 
 ## IDE support
 
