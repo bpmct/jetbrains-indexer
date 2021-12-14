@@ -1,4 +1,4 @@
-name: Call a reusable workflow
+name: Build images for all IDEs
 
 on:
   push:
