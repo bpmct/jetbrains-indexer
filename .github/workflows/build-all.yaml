@@ -5,8 +5,8 @@ on:
     branches:
       - master
     paths:
-      - "image/**" # only run the action when the image has been modified
-
+      - "image/**" # run the action when: the image has been modified
+      - ".github/workflows/**" # run the action when: the workflow has been modified
 jobs:
   build-intellij:
     uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
