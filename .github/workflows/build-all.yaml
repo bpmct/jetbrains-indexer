@@ -48,7 +48,7 @@ jobs:
     uses: bpmct/jetbrains-indexer/.github/workflows/build-and-push.yaml@master
     with:
       IDE: PhpStorm
-      IDE_SHORT: pycharm
+      IDE_SHORT: phpstorm
       IDE_CODE: webide
     secrets:
       username: ${{ secrets.DOCKERHUB_USERNAME }}
