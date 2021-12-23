@@ -25,7 +25,7 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
         -v "$(pwd)":/var/project \
         -v "$HOME/indexes-out":/shared-index \
         -e INDEXES_CDN_URL=http://localhost:3000/project \
-        bencdr/indexer:intellij-2021.3
+        bencdr/indexer:idea-2021.3
     ```
 
 1.  Upload indexes to CDN (or test locally)
