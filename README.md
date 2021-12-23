@@ -6,10 +6,13 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
 
 ## Docs and examples
 
+> ⚠️ Many of these are a work in progress
+
 - [Test a project with shared indexes locally](./docs/filesystem.md)
 - [Generate shared indexes for Coder workspaces](./docs/coder.md)
 - [Generate shared indexes and host on a CDN](./docs/cdn.md)
 - [Generate shared indexes regularly during CI (GitHub Actions)](./docs/ci.md)
+- [Troubleshooting shared indexes](./docs/troubleshooting.md)
 
 ## Basic usage
 
@@ -50,6 +53,10 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
 By default, this project indexes version 2021.3 of your IDE. Specify the IDE name by using the appropriate tag (e.g `bencdr/indexer:[ide-name]-2021.3`). You can verify with [DockerHub](https://hub.docker.com/r/bencdr/indexer/tags).
 
 If an IDE/version is not on DockerHub, we recommend you manually pulling and building the image yourself using [these build arguments](https://github.com/bpmct/jetbrains-indexer/blob/master/image/Dockerfile#L3-L9).
+
+## Troubleshooting
+
+See [./docs/troubleshooting.md](./docs/troubleshooting.md)
 
 ---
 
