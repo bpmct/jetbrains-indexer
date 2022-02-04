@@ -15,8 +15,10 @@ Shared indexes are often hosted on a CDN and used by IDEs to speed up loading (i
         -v "$(pwd)":/var/project \
         -v "$HOME/indexes-out":/shared-index \
         -e INDEXES_CDN_URL=http://localhost:3000/project \
-        -u "$(id -u):$(id -g)" \
         bencdr/indexer:idea-2021.3
+        
+    # you may need to fix the file permissions for the generated indexes
+    sudo chown _R $(id -u):$(id -g) $HOME/indexes-out
     ```
 
 1.  Upload indexes to CDN (or test locally)
