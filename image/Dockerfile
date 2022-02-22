@@ -1,8 +1,9 @@
 FROM openkbs/jdk-mvn-py3
 
 # Shared indexing works best
-# when you use the proper IDE
-# for the language you are using
+# when you use the IDE
+# corresponding to the language
+# your project is in
 ARG IDE=ideaIU
 ARG IDE_SHORT=idea
 ARG IDE_CODE=idea
