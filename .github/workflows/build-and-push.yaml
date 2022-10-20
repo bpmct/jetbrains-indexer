@@ -14,7 +14,7 @@ on:
       IDE_VERSION:
         required: false
         type: string
-        default: "2021.3"
+        default: "2022.2"
     secrets:
       username:
         required: true
